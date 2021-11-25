@@ -22,7 +22,7 @@ module.exports = {
             use: ['ts-loader']
         },
         {    
-            test: /\.less$/,
+            test: /\.css$/,
             use: [ 
                 {
                     loader: 'css-loader',
@@ -37,8 +37,7 @@ module.exports = {
                             //css-loader не собирал стили на сервер глобально - нужен только селектор
                             onlyLocals: true
                         }
-                },
-                'less-loader',
+                }
             ]
         }
     ]

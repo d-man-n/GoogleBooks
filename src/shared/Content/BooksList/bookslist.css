@@ -1,0 +1,8 @@
+.BooksList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.BooksListColumn:not(:last-child) {
+    margin-right: 30px;
+}
