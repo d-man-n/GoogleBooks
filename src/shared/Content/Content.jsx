@@ -9,11 +9,11 @@ import { itemsFetchData } from '../../actions';
 export function Content(props) {
 
     const {booksStore, itemsFetchData} = props;
-    const {books, page} = booksStore;
-
+    const {books, page, items} = booksStore;
+    // console.log(booksStore)
     return (
         <main>
-            <BooksList  books={books} itemsFetchData={itemsFetchData} page={page} />
+            <BooksList  books={books} itemsFetchData={itemsFetchData} page={page} items={items} />
         </main>
     );
 }

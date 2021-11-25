@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 
 import page from '../../reducers/page';
 import books from '../../reducers/books';
+import items from '../../reducers/items';
 
 const rootReducer = combineReducers({
     page,
-    books
+    books, 
+    items
   });
 
 export default function configureStore(initialState) {

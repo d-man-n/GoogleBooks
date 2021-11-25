@@ -4,7 +4,6 @@ const books = (state = [], action) => {
             let img;
             let imgMin;
             for (let i = 0; i < action.items.length; i++) {
-                // console.log(action.items[i])
                 img = action.items[i].volumeInfo.hasOwnProperty('imageLinks') ? action.items[i].volumeInfo.imageLinks.thumbnail : "";
                 imgMin = action.items[i].volumeInfo.hasOwnProperty('imageLinks') ? action.items[i].volumeInfo.imageLinks.smallThumbnail : "";
                 state = [
@@ -13,6 +12,8 @@ const books = (state = [], action) => {
                         id: action.items[i].id, 
                         pdf: action.items[i].accessInfo.pdf.acsTokenLink, 
                         title: action.items[i].volumeInfo.title,
+                        authors: action.items[i].volumeInfo.authors,
+                        categories: action.items[i].volumeInfo.categories,
                         imgMin: imgMin,
                         img: img
                     }
