@@ -7,7 +7,7 @@ const app = express();
 //Определяем, что по урл static доступны все файлы в папке dist/client
 app.use('/static', express.static('./dist/client'))
 
-app.get('/', (req,res)=>{
+app.get('*', (req,res)=>{
     res.send(
         //в корень шаблон указываем рендер react-компонентов
         indexTemplate(ReactDOM.renderToString(App()))
