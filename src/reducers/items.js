@@ -1,7 +1,7 @@
 const items = (state = 0, action) => {
     switch(action.type) {
         case 'MORE_BOOKS':
-            console.log(state)
+            state=action.items;
             return state;
 
         default:

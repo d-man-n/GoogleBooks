@@ -5,15 +5,15 @@ export function Header() {
     return(
         <header className={styles.header}>
             <h2 className={styles.title}>Search for books</h2>
-            <form>
+            <form action={"/books"}>
                 <div className={styles.search}>
-                    <input type="text" className={styles.fldSearch} />
+                    <input type="text" name="search" className={styles.fldSearch} />
                     <button className={styles.btnSearch}></button>
                 </div>
                 <div className={styles.searchFilter}>
                     <div className={styles.categories}>
                         <p className={styles.text}>Categories</p>
-                        <select name="" id="">
+                        <select name="categoties" id="">
                             <option value="all">all</option>
                             <option value="art">art</option>
                             <option value="biography">biography</option>
@@ -25,7 +25,7 @@ export function Header() {
                     </div>
                     <div className={styles.strong}>
                         <p className={styles.text}>Strong by</p>
-                        <select name="" id="">
+                        <select name="strongBy" id="">
                             <option value="relevance">relevance</option>
                             <option value="newest">newest</option>
                         </select>

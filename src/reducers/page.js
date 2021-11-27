@@ -1,7 +1,8 @@
 const page = (state = 0, action) => {
     switch(action.type) {
         case 'MORE_BOOKS':
-            return ++state;
+            state=++action.page;
+            return state;
 
         default:
             return state;

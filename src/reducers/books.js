@@ -3,17 +3,18 @@ const books = (state = [], action) => {
         case 'MORE_BOOKS':
             let img;
             let imgMin;
-            for (let i = 0; i < action.items.length; i++) {
-                img = action.items[i].volumeInfo.hasOwnProperty('imageLinks') ? action.items[i].volumeInfo.imageLinks.thumbnail : "";
-                imgMin = action.items[i].volumeInfo.hasOwnProperty('imageLinks') ? action.items[i].volumeInfo.imageLinks.smallThumbnail : "";
+            for (let i = 0; i < action.books.length; i++) {
+                img = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.thumbnail : "";
+                imgMin = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.smallThumbnail : "";
                 state = [
                     ...state,
                     {
-                        id: action.items[i].id, 
-                        pdf: action.items[i].accessInfo.pdf.acsTokenLink, 
-                        title: action.items[i].volumeInfo.title,
-                        authors: action.items[i].volumeInfo.authors,
-                        categories: action.items[i].volumeInfo.categories,
+                        id: action.books[i].id, 
+                        pdf: action.books[i].accessInfo.pdf.acsTokenLink, 
+                        title: action.books[i].volumeInfo.title,
+                        description: action.books[i].volumeInfo.description,
+                        authors: action.books[i].volumeInfo.authors,
+                        categories: action.books[i].volumeInfo.categories,
                         imgMin: imgMin,
                         img: img
                     }
