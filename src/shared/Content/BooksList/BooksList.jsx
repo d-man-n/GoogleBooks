@@ -1,28 +1,29 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-// import Masonry from 'react-masonry-css';
 import InfiniteScroll from 'react-infinite-scroller';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import styles from './bookslist.css';
 
 export function BooksList(props) {
+
+    const { search, categories, strongBy } = useLocation().state;
+
     let {books, page, items, itemsFetchData} = props;
+    let hasMore = items>books.length ? true : false;
 
-    const queryParams = new URLSearchParams(window.location.search);
-    const search = queryParams.get('search');
-    const categoties = queryParams.get('categoties');
-    const strongBy = queryParams.get('strongBy');
+    useEffect(() => itemsFetchData(0, search, categories, strongBy), [search]);
+    useEffect(() => itemsFetchData(0, search, categories, strongBy), [categories]);
+    useEffect(() => itemsFetchData(0, search, categories, strongBy), [strongBy]);
 
-    // useEffect(() => itemsFetchData(0), [])
     return (
         <div>
             <h2 className={styles.coll}>Found {items} results</h2>
             <InfiniteScroll
-                loadMore={() => itemsFetchData(page++)}
-                hasMore={true}
-                loader={<h2 key={-1}>Loading...</h2>}
+                loadMore={() => itemsFetchData(page++, search, categories, strongBy)}
+                hasMore={hasMore}
+                loader={<h2 className={styles.loading} key={-1}>Loading...</h2>}
                 className={styles.BooksList}
             >
                 {

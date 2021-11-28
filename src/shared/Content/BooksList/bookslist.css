@@ -52,8 +52,13 @@
     text-decoration: none;
 }
 
-@media (max-width: 975px) {
-    .Bookslist {
+.loading {
+    width: 100%;
+    text-align: center;
+}
+
+@media all and (max-width: 975px) {
+    .BooksList {
         justify-content: space-around;
     }
 }

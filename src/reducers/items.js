@@ -4,6 +4,10 @@ const items = (state = 0, action) => {
             state=action.items;
             return state;
 
+        case 'CLEAR_BOOKS':
+            state = 0;
+            return state;
+
         default:
             return state;
     }

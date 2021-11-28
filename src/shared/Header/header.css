@@ -67,3 +67,21 @@
     letter-spacing: 1px;
     margin-right: 10px;
 }
+
+@media all and (max-width: 480px) {
+    .search {
+        justify-content: center;
+    }
+
+
+    .fldSearch {
+        width: 80%;
+    }
+    .searchFilter {
+        flex-wrap: wrap;
+    }
+
+    .categories {
+        margin-bottom: 20px;
+    }
+}
