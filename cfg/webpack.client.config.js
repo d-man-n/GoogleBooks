@@ -29,7 +29,7 @@ module.exports = {
     //точка входа на клиенте - с какого файла начинать - здесь идет настройка запроса к серверу, которые будут отдавать данные с hmr   
     entry: [
         path.resolve(__dirname, '../src/client/index.jsx'),
-        'webpack-hot-middleware/client?path=http://localhost:3002/static/__webpack_hmr'
+        'webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr'
     ],
     //в какой папке хранить обработанный вебпаком файл и как он будет называться
     output: {

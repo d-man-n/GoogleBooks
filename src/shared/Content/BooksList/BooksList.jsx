@@ -8,7 +8,12 @@ import styles from './bookslist.css';
 
 export function BooksList(props) {
 
-    const { search, categories, strongBy } = useLocation().state;
+
+    if (useLocation().state) const { search, categories, strongBy } = useLocation().state;
+
+    if (!search) const search = "react";
+    if (!categories) const categories = "all";
+    if (!strongBy) const strongBy = "";
 
     let {books, page, items, itemsFetchData} = props;
     let hasMore = items>books.length ? true : false;
