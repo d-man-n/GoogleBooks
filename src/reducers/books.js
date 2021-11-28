@@ -5,8 +5,8 @@ const books = (state = [], action) => {
             let imgMin;
             if (action.books) {
                 for (let i = 0; i < action.books.length; i++) {
-                    img = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.thumbnail : "";
-                    imgMin = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.smallThumbnail : "";
+                    img = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.thumbnail : "https://www.gsm42.ru/images/other/noimg.png";
+                    imgMin = action.books[i].volumeInfo.hasOwnProperty('imageLinks') ? action.books[i].volumeInfo.imageLinks.smallThumbnail : "https://www.gsm42.ru/images/other/noimg.png";
     
                     if (action.books[i].volumeInfo.categories) {
                         const cat = action.books[i].volumeInfo.categories.find(item => item.toUpperCase() === action.categories.toUpperCase());
